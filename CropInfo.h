@@ -3,6 +3,9 @@
 using namespace std;
 class CropInfo{
     public:
+        void operator=(const CropInfo &other);
+        CropInfo(const CropInfo &other);
+        ~CropInfo();
         CropInfo();
         void readFromFile(istream &file);
         void readFromUser();
@@ -13,7 +16,7 @@ class CropInfo{
               NUM_YEARS = 19,
               START_YEAR = 2000};
         double cropCode;
-        char name[MAX_NAME_LEN];
-        double yieldsByYear[NUM_YEARS];
+        char *name;
+        double *yieldsByYear;
         
 };
